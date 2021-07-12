@@ -88,17 +88,17 @@ class PushlyFirebaseListener {
       event.waitUntil(myPromise);
     });
     // To listen when user closes notification
-    self.addEventListener("notificationclick", (event) => {
-      this.execute = true;
-      console.log("selfnotificationclick..", self);
-      console.log("notificationclick", event);
-      // Redirect to website which is given by subscriber
-      if (this.launchUrl) clients.openWindow(this.launchUrl);
-      const clickedNotification = event.notification;
-      if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "success");
-      // Reset variable
-      this.exeMessageApi = "";
-    });
+    // self.addEventListener("notificationclick", (event) => {
+    //   this.execute = true;
+    //   console.log("selfnotificationclick..", self);
+    //   console.log("notificationclick", event);
+    //   // Redirect to website which is given by subscriber
+    //   if (this.launchUrl) clients.openWindow(this.launchUrl);
+    //   const clickedNotification = event.notification;
+    //   if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "success");
+    //   // Reset variable
+    //   this.exeMessageApi = "";
+    // });
   }
 
   /**
