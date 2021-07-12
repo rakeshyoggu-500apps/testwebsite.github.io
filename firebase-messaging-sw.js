@@ -69,13 +69,24 @@ class PushlyFirebaseListener {
     });
 
     // To listen when user clicks on notification
-    self.addEventListener("notificationclose", (event) => {
-      console.log("selfnotificationclose..", self);
+    // self.addEventListener("notificationclose", (event) => {
+    //   console.log("selfnotificationclose..", self);
+    //   console.log("notificationclose", event);
+    //   const clickedNotification = event.notification;
+    //   if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
+    // });
+    self.addEventListener("notificationclick", (event) => {
+      event.notification.close();
       console.log("notificationclose", event);
-      const clickedNotification = event.notification;
-      if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
+      const myPromise = new Promise(function (resolve, reject) {
+        console.log("notificationcloseinsidepromise", event);
+        // Do you work here
+        const clickedNotification = event.notification;
+        if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
+        resolve();
+      });
+      event.waitUntil(myPromise);
     });
-
     // To listen when user closes notification
     self.addEventListener("notificationclick", (event) => {
       this.execute = true;
