@@ -46,7 +46,7 @@ class PushlyFirebaseListener {
     self.addEventListener("push", (event) => {
       this.execute = false;
       var message = event.data.json();
-      console.log("self..", self);
+      console.log("self1..", self);
       console.log("message", message);
       if (message.data.hasOwnProperty("data")) {
         this.pushObj = JSON.parse(message.data.data);
@@ -70,7 +70,7 @@ class PushlyFirebaseListener {
 
     // To listen when user clicks on notification
     self.addEventListener("notificationclose", (event) => {
-      console.log("self..", self);
+      console.log("selfnotificationclose..", self);
       console.log("notificationclose", event);
       const clickedNotification = event.notification;
       if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
@@ -79,7 +79,7 @@ class PushlyFirebaseListener {
     // To listen when user closes notification
     self.addEventListener("notificationclick", (event) => {
       this.execute = true;
-      console.log("self..", self);
+      console.log("selfnotificationclick..", self);
       console.log("notificationclick", event);
       // Redirect to website which is given by subscriber
       if (this.launchUrl) clients.openWindow(this.launchUrl);
