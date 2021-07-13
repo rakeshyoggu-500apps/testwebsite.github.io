@@ -46,7 +46,7 @@ class PushlyFirebaseListener {
     self.addEventListener("push", (event) => {
       this.execute = false;
       var message = event.data.json();
-      console.log("self1..", self);
+      console.log("self..", self);
       console.log("message", message);
       if (message.data.hasOwnProperty("data")) {
         this.pushObj = JSON.parse(message.data.data);
@@ -69,36 +69,23 @@ class PushlyFirebaseListener {
     });
 
     // To listen when user clicks on notification
-    // self.addEventListener("notificationclose", (event) => {
-    //   console.log("selfnotificationclose..", self);
-    //   console.log("notificationclose", event);
-    //   const clickedNotification = event.notification;
-    //   if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
-    // });
-    self.addEventListener("notificationclick", (event) => {
-      event.notification.close();
+    self.addEventListener("notificationclose", (event) => {
       console.log("notificationclose", event);
-      const myPromise = new Promise(function (resolve, reject) {
-        console.log("notificationcloseinsidepromise", event);
-        // Do you work here
-        const clickedNotification = event.notification;
-        if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
-        resolve();
-      });
-      event.waitUntil(myPromise);
+      const clickedNotification = event.notification;
+      if (this.message_id && !this.execute) this.saveUserAction("close", "failure");
     });
+
     // To listen when user closes notification
-    // self.addEventListener("notificationclick", (event) => {
-    //   this.execute = true;
-    //   console.log("selfnotificationclick..", self);
-    //   console.log("notificationclick", event);
-    //   // Redirect to website which is given by subscriber
-    //   if (this.launchUrl) clients.openWindow(this.launchUrl);
-    //   const clickedNotification = event.notification;
-    //   if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "success");
-    //   // Reset variable
-    //   this.exeMessageApi = "";
-    // });
+    self.addEventListener("notificationclick", (event) => {
+      this.execute = true;
+      console.log("notificationclick", event);
+      // Redirect to website which is given by subscriber
+      if (this.launchUrl) clients.openWindow(this.launchUrl);
+      const clickedNotification = event.notification;
+      if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "success");
+      // Reset variable
+      this.exeMessageApi = "";
+    });
   }
 
   /**
