@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUSH</title>
     <script>
-      ((p, u, s, h, l, y) => {
-        p._push = { apiKey: "2873575020711654" };
-        p._pushfcm = {
-          location: "dev",
-        };
-        l = u.getElementsByTagName("head")[0];
-        y = u.createElement("script");
-        y.async = 1;
-        y.id = "pushninja_script";
-        y.src = s + h;
-        l.appendChild(y);
-      })(window, document, "", "/push.min.js");
-    </script>
+	((p,u,s,h,l,y)=>{
+       p._push={"apiKey":'2873575020711654'};
+	   p._pushfcm = {
+	       location:'dev'
+	     };
+          l = u.getElementsByTagName('head')[0];
+	      y = u.createElement('script');
+	      y.async = 1;
+        y.id="pushninja_script"
+	      y.src = s+h;
+          l.appendChild(y);})(window,document,'https://infinity-public-js.500apps.com/push/','push.min.js');
+</script>
   </head>
 
   <body>
