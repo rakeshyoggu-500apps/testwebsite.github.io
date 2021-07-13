@@ -57,6 +57,7 @@ class PushlyFirebaseListener {
         var obj = JSON.parse(message.data.notification);
       }
       const title = obj.title;
+      console.log("obj...",obj);
       const options = {
         body: obj.body,
         icon: obj.icon,
