@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siterecoding</title>
 	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WCCP4BD');</script>
 <!-- End Google Tag Manager -->
-	  <script>
+	  <!--<script>
         (function(s, i, t, e, r, p) {
       p = i.getElementsByTagName('head')[0];
       r = i.createElement('script');
@@ -23,7 +23,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     };
     p.appendChild(r);
     })(window, document, 'https://infinity-public-js.500apps.com/siterecording/', 'siterecorder.min.js');
-    </script>
+    </script> -->
+	<script>
+		(async (f, o, r, m, s) => {
+		  m = o.getElementsByTagName("head")[0];
+		  s = o.createElement("script");
+		  s.async = 1;
+		  s.src = r;
+		  s.onload = async () => {
+			let data = await f.wg.init("forms", "dev", 2814, 11964, "forms/1114/embed", { width: "1200px", height: "750px" }, "widget", "DIV-ID");
+		  };
+		  m.appendChild(s);
+		})(window, document,  "https://infinity-public-js.500apps.com/widget.min.js");
+	  </script>
   </head>
        
 
