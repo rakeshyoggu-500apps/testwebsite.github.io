@@ -9,4 +9,5 @@
     var data = await f.wg.init("forms", r.split("-")[0], r.split("-")[1], r.split("-")[2], `forms/${r.split("-")[3]}/embed`, { width: "1200px", height: "750px" }, "widget", r.split("-")[4]);
   };
   m.appendChild(s);
+  console.log("verified by script")
 })(window, document, "https://infinity-public-js.500apps.com/widget.min.js");
