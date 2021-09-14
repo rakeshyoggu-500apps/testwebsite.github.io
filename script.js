@@ -4,7 +4,7 @@
   s.async = 1;
   s.src = r;
   s.onload = async () => {
-    let d = decodeURIComponent(decodeURIComponent("form_key"));
+    let d = decodeURIComponent(decodeURIComponent("ZGV2LTI4MTQtMTE5Ni0xMTEz-id"));
     let r = window.atob(d);
     var data = await f.wg.init("forms", r.split("-")[0], r.split("-")[1], r.split("-")[2], `forms/${r.split("-")[3]}/embed`, { width: "1200px", height: "750px" }, "widget", r.split("-")[4]);
   };
