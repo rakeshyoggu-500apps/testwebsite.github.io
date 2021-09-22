@@ -11,7 +11,7 @@ body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 </style>
 <head>
-        <script>
+<!--         <script>
         (function(s, i, t, e, r, p) {
       p = i.getElementsByTagName('head')[0];
       r = i.createElement('script');
@@ -22,6 +22,18 @@ body {font-family: "Lato", sans-serif}
     };
     p.appendChild(r);
     })(window, document, 'https://infinity-public-js.500apps.com/siterecording/', 'siterecorder.min.js');
+    </script> -->
+        <script>
+      (async (f, o, r, m, s) => {
+        m = o.getElementsByTagName("head")[0];
+        s = o.createElement("script");
+        s.async = 1;
+        s.src = r;
+        s.onload = async () => {
+          let data = await f.wg.init("forms", "dev", 2840, 7820, "forms/1150/embed", { width: "1200px", height: "750px" }, "widget", "DIV-ID");
+        };
+        m.appendChild(s);
+      })(window, document,  "https://infinity-public-js.500apps.com/widget.min.js");
     </script>
         <!-- Google Tag Manager -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -68,6 +80,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- Navbar -->
 <div class="w3-top">
+        <div id="DIV-ID"/>
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
